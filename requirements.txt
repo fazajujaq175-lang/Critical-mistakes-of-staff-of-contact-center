@@ -1,4 +1,4 @@
-slack_bolt
-flask
+slack_sdk
 gspread
 oauth2client
+schedule
