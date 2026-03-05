@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "certain-pagoda-489310-u6",
+  "private_key_id": "33d1197c4a7d81af7359a7eeb3c2cf9eccaf1dc1",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDEvBMmcv7wvy2H\n03pPsIISOBtHCdo08OgPvhRDPj5CJymbloRiBLZqmFtpmgZk0CtVMZFwmg9bx1gu\nnnX4SyGqdI1c7FeSnwCdEnb99tApcRnL7y23cVlnXzhZ1tCxqxvjPYo7oaIio77Y\n3HIIWhfOlOYbHuprZrdy/PhEK7j4R9jsmijrhG/t+CMyuDNNe2WaqKCM6UKbq3zd\n8tgayR9i6R5CiLKWd2dygn7NqvcQx4p5PnOiLxYNttP4NYHQ+AA4cm6K63i1gp9h\nBBtZIAIOyxKfhUOcdsh8eyuO4J7H6lySC4twmS3IZz2OApkjvEnqVCnBc8ib/LQQ\nX7o8bXnTAgMBAAECggEAHK54skHQpiORDTzJF6YZiHNykpw+mjpG8siY5qbD59wS\nxlKe0TVzrL2ykgY5CWiJ8L0twXdMZup8kita8oxth46/bz0rlT4mFkAzZdoeRfRt\nuNwRU62sRZRNwFc/jK9v/OSjawco/pjVwYL+AvazgtQVaf3LWkYa16JGxZWEPXnm\nku54uX05PF5IsSppd0Ky9fzae24VfSh3BbpgF5/RTVYkUxZb39Aou/WPmRrcPzn/\n3qmlwdknw6b6vOGBqgzMPMaSDLYr3T7BqwiwfQrN7mB+YLVmLYwv1Hfy31mLzGFr\nGurJ4buBFyaOhSZEar/B8hbl7EpqH3aeBCMfS+ZP7QKBgQDmBRdTGrWoUUvAr1PC\nGXupUp15CP0mVg92APSW8OEmO4Avlh34/IsxeONV9Yn2BcnEpxLEp2MwwPxNqlUx\nGUt+7S7I8/hz+0PDK1NlyboejBwhb8FtSahX3d0zzNW0Sca898DLJd6Q/VPI7/Mo\nY7xSYq7AXvp8C5tp8caru7Bm1QKBgQDa9I7xF7fyDPp8mSVhOr8d2+Hu4RvfT1LL\nfyoe3imzN+cjuAN9dVJY1Jku2uBa3cim19m14RBBt1jx8CU9o42GHWl78dqwE0A3\nMXXvzaibCswSyzbg+bG/SBfGqfvvMm2IvRz6xLynTj2LNlx0/xFFOOCBNmp/djkW\nEOcRcxkCBwKBgQCqI8Ho+qy738ZEtGsj+215BV7tlDSMEsRE6NgCfhJMEV7z0/o/\nna3n3h9qCcEOdaGVEG/VfmrkORtm50M0mh05uX8NrUhtocGxr250sA43YjO8l8lf\naUhYFgf0tOKuBJQ4WpoEqfJDFN7Qlowpp/w4hD32lUp6TquaZfgqNx54MQKBgQCd\nxcuafnTVvfRhBBmjTimY4nCTKTJkX0xRxngbdgqmUYoEevxI0tlbmRYoZR91WorT\nboY6QMruD6fP7jNnjwrTsS3pWgUzCywimUlaWt87mTQj9rq8sjAanWBEjwgy/Cth\ndKQFLu6hwAco4SsOQx22u51KfmOPJSlNdTCLqlxC0QKBgQCYb5aOlloVp+VQOz7A\nxFa7T+6klEBgbfeA1Pm+J7StuzAuR9Kg7QymrWxhsMauGODAbLDsHAjt3rgkS8zs\nz58dWoDxmk/Wa/qv27Fy3kr0x3rQ1ouRm44Rj736IO0oRuy+Aj1PBFan2HREzocg\nTCHQyqAWAMGneVaGuu3DmeGeLw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "slack-monitor-conact-center@certain-pagoda-489310-u6.iam.gserviceaccount.com",
+  "client_id": "103151067715885060253",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/slack-monitor-conact-center%40certain-pagoda-489310-u6.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
