@@ -1,4 +1,0 @@
-slack_bolt
-flask
-gspread
-oauth2client
