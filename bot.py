@@ -9,7 +9,7 @@ import os
 # ===== НАСТРОЙКИ =====
 
 SLACK_TOKEN = xoxb-10404683860950-10640251679332-J6SF9GX8YsVxHOyHXqUpewVD
-CHANNEL = #криты-кц-бот
+CHANNEL = "#криты-кц-бот"
 
 
 SPREADSHEET_NAME = "Криты, настройка ботов"
@@ -86,3 +86,4 @@ check_sheet()
 while True:
     schedule.run_pending()
     time.sleep(10)
+
