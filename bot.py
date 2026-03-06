@@ -3,47 +3,86 @@ import schedule
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from slack_sdk import WebClient
+import json
 import os
 
-SLACK_TOKEN = os.environ["SLACK_BOT_TOKEN"]
-CHANNEL_ID = os.environ["SLACK_CHANNEL_ID"]
+# ===== НАСТРОЙКИ =====
+
+SLACK_TOKEN = xoxb-10404683860950-10640251679332-J6SF9GX8YsVxHOyHXqUpewVD
+CHANNEL = #криты-кц-бот
+
+
+SPREADSHEET_NAME = "Криты, настройка ботов"
+WORKSHEET_NAME = "Криты КЦ"
+
+CHECK_INTERVAL = 3  # минуты
+
+STATE_FILE = "sent_values.json"
+
+# ===== SLACK =====
 
 client = WebClient(token=SLACK_TOKEN)
 
+# ===== GOOGLE SHEETS =====
+
 scope = [
- "https://spreadsheets.google.com/feeds",
- "https://www.googleapis.com/auth/drive"
+    "https://spreadsheets.google.com/feeds",
+    "https://www.googleapis.com/auth/drive"
 ]
 
 creds = ServiceAccountCredentials.from_json_keyfile_name("creds.json", scope)
-gs = gspread.authorize(creds)
+gc = gspread.authorize(creds)
 
-sheet = gs.open("Криты, настройка ботов").worksheet("Криты КЦ")
+sheet = gc.open(SPREADSHEET_NAME).worksheet(WORKSHEET_NAME)
 
-seen_values = set()
+# ===== ХРАНЕНИЕ УЖЕ ОТПРАВЛЕННЫХ =====
+
+if os.path.exists(STATE_FILE):
+    with open(STATE_FILE, "r") as f:
+        sent_values = json.load(f)
+else:
+    sent_values = []
+
+# ===== ПРОВЕРКА ТАБЛИЦЫ =====
 
 def check_sheet():
+    global sent_values
 
-    global seen_values
+    try:
+        values = sheet.col_values(1)
 
-    values = sheet.col_values(1)
+        new_values = []
 
-    new_values = [v for v in values if v not in seen_values and v.strip() != ""]
+        for value in values:
+            value = value.strip()
 
-    for value in new_values:
+            if value and value not in sent_values:
+                new_values.append(value)
 
-        client.chat_postMessage(
-            channel=CHANNEL_ID,
-            text=f"Новое значение: {value}"
-        )
+        for value in new_values:
+            client.chat_postMessage(
+                channel=CHANNEL,
+                text=f"🚨 *Критическая ошибка:*\n{value}"
+            )
 
-    seen_values.update(new_values)
+            print("Отправлено:", value)
 
+            sent_values.append(value)
 
-schedule.every(5).minutes.do(check_sheet)
+        with open(STATE_FILE, "w") as f:
+            json.dump(sent_values, f)
 
-print("Bot started")
+    except Exception as e:
+        print("Ошибка:", e)
+
+# ===== ПЛАНИРОВЩИК =====
+
+schedule.every(CHECK_INTERVAL).minutes.do(check_sheet)
+
+print("Бот запущен. Проверка каждые", CHECK_INTERVAL, "минут")
+
+check_sheet()
 
 while True:
     schedule.run_pending()
-    time.sleep(5)
+    time.sleep(10)
