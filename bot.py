@@ -8,7 +8,7 @@ import os
 
 # ===== НАСТРОЙКИ =====
 
-SLACK_TOKEN = xoxb-10404683860950-10640251679332-J6SF9GX8YsVxHOyHXqUpewVD
+SLACK_TOKEN = "xoxb-10404683860950-10640251679332-J6SF9GX8YsVxHOyHXqUpewVD"
 CHANNEL = "#криты-кц-бот"
 
 
@@ -86,4 +86,5 @@ check_sheet()
 while True:
     schedule.run_pending()
     time.sleep(10)
+
 
